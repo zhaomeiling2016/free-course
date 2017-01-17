@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ary=[2,1,4,2,2,3,4,4,6,7,6]
+    var obj={};
+    for(var i=0;i<ary.length;i++){
+        var cur=ary[i];
+        if(obj[cur]==cur){
+            ary[i]=ary[ary.length-1];
+            ary.pop(ary.length-1);
+            i--;
+        }else{
+            obj[cur]=cur;
+        }
+
+    }
+    console.log(ary);
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        #tab{ width: 300px; margin: 50px auto;}
+        #tab ul{ text-align: center;}
+        #tab ul li{ display: inline-block; text-align: center; height: 30px; line-height: 30px; width: 80px; border: 1px solid orange; }
+        #tab ul li.selectLi{ background-color: orange;}
+        #tab div{ display: none; width: 300px;  height:200px; }
+        #tab div.selectDiv{ display: block; background-color: orange;}
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <ul>
+            <li class="selectLi">选项卡一</li>
+            <li>选项卡二</li>
+            <li>选项卡三</li>
+        </ul>
+        <div class="selectDiv">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+    <script>
+        var oTab=document.getElementById("tab");
+        var oUl=oTab.getElementsByTagName("ul")[0];
+        var oLis=oUl.getElementsByTagName("li");
+        var oDivs=oTab.getElementsByTagName("div");
+
+        for(var i=0;i<oLis.length;i++){
+            oLis[i].index=i;
+            oLis[i].onclick=function () {
+                for(var j=0;j<oLis.length;j++){
+                    oLis[j].className="";
+                    oDivs[j].className="";
+                }
+                this.className="selectLi";
+                oDivs[this.index].className="selectDiv";
+
+            }
+        }
+    </script>
+</body>
+</html>

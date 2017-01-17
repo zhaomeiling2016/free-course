@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        ul,li{ list-style: none;}
+        #tab{ width: 900px; border: 1px solid #000; margin: 30px auto;}
+        #tab ul li{ overflow: hidden;}
+        #tab ul li span{ float: left;width: 90px; text-align: center;}
+        .c1{ background-color: red;}
+        .c2{ background-color: green;}
+        .c3{ background-color: yellow;};
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <!--<ul>
+            <li>
+                <span>1*1=1</span>
+            </li>
+            <li>
+                <span>1*2=2</span>
+                <span>2*2=4</span>
+            </li>
+        </ul>-->
+    </div>
+    <script>
+        var str="";
+        var oDiv=document.getElementById("tab");
+        str+="<ul>";
+            for(var i=1;i<=9;i++){
+                str+="<li>";
+                    for(var j=1;j<=i;j++){
+                        str+="<span>";
+                        str+=j+"*"+i+"="+j*i;
+                        str+="</span>";
+                    }
+                str+="</li>";
+            }
+        str+="</ul>";
+        //console.log(str);
+        oDiv.innerHTML=str;
+        var oLis=document.getElementsByTagName("li");
+        for(var i=0;i<oLis.length;i++){
+            oLis[i].className="c"+(i%3+1);
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sum(){
+        var total=0;
+        for(var i=0;i<arguments.length;i++){
+            var cur=parseFloat(arguments[i]);
+            if(!isNaN(cur)){
+                total+=cur;
+            }
+        }
+        //console.log(total);
+        return total;
+    }
+   var total= sum(1,2,3,4,'10px','zfpx');
+    console.log(total)
+
+</script>
+</body>
+</html>

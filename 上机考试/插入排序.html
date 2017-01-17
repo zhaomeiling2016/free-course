@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ary=[3,4,1,2,7,6,8,5];
+    function insertSort(ary) {
+        var newArray=[];
+        var fir=ary[0];
+        newArray.push(fir);
+        for(var i=1;i<ary.length;i++){
+            var cur=ary[i];
+            for(var j=newArray.length-1;j>=0;){
+                if(cur<newArray[j]){
+                    j--;
+                    if(j==-1){
+                        newArray.unshift(cur);
+                    }
+                }else{
+                    newArray.splice(j+1,0,cur);
+                    break;
+                }
+            }
+        }
+        return newArray;
+
+    }
+    console.log(insertSort(ary));
+</script>
+</body>
+</html>
